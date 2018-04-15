@@ -1,0 +1,19 @@
+<!doctype html>
+<html>
+    <head>
+        <title>{{page_title}}</title>
+
+        
+    </head>
+<body>
+
+    <a href="{{ url_for('index') }}"> Main Blog Page </a>
+    <a href="{{ url_for('go_to_entry') }}"> Add a Blog Entry </a>
+
+
+    <h1>{{page_title}}</h1>
+    {% block content %}
+    {% endblock %}
+
+</body>
+</html
