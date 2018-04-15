@@ -14,7 +14,9 @@ Class Blog(db.Model)
         title = db.Column(db.String(120))
         body = db.Column(db.String(900))
 
-
+        def__init(title, body):
+        self.title = title
+        self.body = body
 
 
 
@@ -34,3 +36,8 @@ def Blog():
 
 @app.route('newpost', methods=['POST'])
 def newpost():
+
+
+
+if __name__ == '__main__':
+    app.run()
