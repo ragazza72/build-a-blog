@@ -32,7 +32,7 @@ def index():
 
 @app.route('/entry', methods=['POST', 'GET'])
 def blog_entry():
-    return render_templates('entry.html', page_title="Build a Blog")
+    return render_template('entry.html', page_title="Build a Blog")
 
 
 
@@ -44,7 +44,7 @@ def newpost():
     blog = Blog.query.get(blog_id)
     return render_template('newpost.html', page_title=blog.title, entry=blog.body)
 
-@app.route('/text-entry', methods=['GET', 'POST'])
+@app.route('/enter-data', methods=['GET', 'POST'])
 def data_entry():
 
     if request.method == 'POST': 
