@@ -5,7 +5,7 @@ from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
 app.config['DEBUG'] = True
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://build-a-blog:buildtheblog@localhost:8889/get-it-done'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://build-a-blog:buildtheblog@localhost:8889/build-a-blog'
 app.config['SQLALCHEMY_ECHO'] = True
 db = SQLAlchemy(app)
 
@@ -44,8 +44,8 @@ def newpost():
     blog = Blog.query.get(blog_id)
     return render_template('newpost.html', page_title=blog.title, entry=blog.body)
 
-@app.route('/text_entry', methods=['POST', 'GET'])
-def blog_entry():
+@app.route('/text-entry', methods=['GET', 'POST'])
+def data_entry():
 
     if request.method == 'POST': 
         title = request.form['title']
